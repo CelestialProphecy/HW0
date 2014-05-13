@@ -1,10 +1,15 @@
 load 'HW0_p1.rb'
 
+
 a = [1,2,3]
 b = [-1,8,2]
 c = []
 d = [9]
-puts " tests for sum*************************"
+
+puts " the below tests return true if passed"
+puts " tests for sum*************************
+	 ******"
+
 
 puts "sum for #{a} is #{sum(a) == 6} "
 puts "sum for #{b} is  #{sum(b) == 9}"

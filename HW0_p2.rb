@@ -1,7 +1,10 @@
 # Define a method hello(name) that takes a string representing a name
 # and returns the string "Hello, " concatenated with the name.
 def hello(name)
-  "Hello, #{name}"
+
+  if name.is_a? String
+    "Hello, #{name}"
+  end
 end 
 
 # Define a method starts_with_consonant?(s) that takes 
@@ -10,7 +13,9 @@ end
 # A, E, I, O, U.) 
 # NOTE: be sure it works for both upper and lower case and for nonletters!
 def starts_with_consonant?(s)
-  return false if s.empty?
+    # if s.empty?
+  
+   
   # psj :: !! it's easier to evaluate an array of vowels using #includes? than understand your regular expression
   # vh: agreed but was not passing test on special characters ex. /&%$# 
   # this expression works too (s =~ /^(?=[^aeiou])(?=a-z)/i )==0
@@ -18,9 +23,16 @@ def starts_with_consonant?(s)
   # BP : What I noticed on this is that the original way it was written,
   # any tests with numbers or special characters were returning true. ..and emptys and ints threw errors.
   # the other option could be to just test the consonants instead of vowels.. but that isn't very elegent 
-  vowels = %w(A E I O U)
-  consonant = s.to_s[0]
-  effi = (!vowels.include? consonant.upcase) && s[/a-zA-Z/+] == s
+      vowels = %w(a e i o u)
+      consonant =("a".."z").find_all { |letter| !vowels.include? letter}
+      if s.is_a?(String) && !s.empty?
+        return consonant.include? s[0].downcase
+
+      else
+        return false
+      end
+    
+   
 end
 
 # Define a method binary_multiple_of_4?(s) that takes a string and returns true 

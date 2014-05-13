@@ -5,16 +5,24 @@ numbers = [1,2]
 empty = ""
 
 
-puts "test for hello *************************"
 
-puts hello b1
-puts hello b2
-puts hello numbers
-puts hello empty
+puts "test for hello *************************\n"
+puts "\n"
+
+hellotests = ["Ben", "Budi", [1,2], "", 0, -1, 9, ]
+
+hellotests.each do |test| puts "testing #{test} returns #{hello(test)}" 
+	end
+
+
 
 puts "test for starts_with_consonant? *************************"
+puts "\n"
 
-testcases = [["apple", false,["boston",true], ["camel",true], ["Quiet",true], ["mInIng", true], ["I",false],["1234",false],["1ef",false]] #["",false], [1,false], [0,false],]
+testcases = [["apple", false],["boston",true], ["camel",true], 
+			["Quiet",true], ["mInIng", true], ["I",false],
+			["1234",false], ["1ef",false],["",false], 
+			["Back",true], ["Cal",true], ["Zal",true],[1,false], [0,false],]
 
 
 
@@ -24,6 +32,7 @@ end
 
 
 puts "test for binary_multiple_of_4? *************************"
+puts "\n"
 
 tests = {:sixteen => ["1000", true], :four => ["100",true], :two => ["10",false], :forty_8 => ["110000",true],
         :nonbinary => ["18",false], :negative_non => ["-9",false], :four_multiple_non => ["24",false],
