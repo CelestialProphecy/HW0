@@ -12,18 +12,19 @@ load 'HW0_p3.rb'
 # price of 33.8 should display as "$33.80".
 # enter tests below
 #TODO
-cases = [["123",234],["-4",0],["",-1], ["99908",889]]
+cases = [["123",234],["-4",0],["",-1], ["99908",889],["abcdf",88],]# [88,888],["lm","p"]]
 def tryout(isbn, number)
 	begin
 		b = BookInStock.new(isbn,number)
-		puts  [b.isbn, b.price_as_string]			
-	rescue ArgumentError
-		puts "ArgumentError"
+		a = [b.isbn, b.price_as_string]			
+	rescue Exception => e
+		a = e.inspect 
+		#puts "ArgumentError"
 	end
+	puts "BookInStock(#{isbn},#{number}) returns #{a}
+		\n"
 end
 
-cases.each do |x,y|  puts " is what new BookInStock(#{x},#{y}) isbn, price_as_string returns \n #{tryout(x, y)}"
+cases.each do |x,y|  tryout(x, y)
 end
-#puts test1.methods
-# puts test1.isbn
-# puts test1.price_as_string
+
