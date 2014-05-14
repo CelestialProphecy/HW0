@@ -25,6 +25,7 @@ def starts_with_consonant?(s)
   # the other option could be to just test the consonants instead of vowels.. but that isn't very elegent 
       vowels = %w(a e i o u)
       consonant =("a".."z").find_all { |letter| !vowels.include? letter}
+      #consonant = ("a".."z").collect { |letter| !vowels.include? letter}
       if s.is_a?(String) && !s.empty?
         return consonant.include? s[0].downcase
 
@@ -39,13 +40,10 @@ end
 # if the string represents a binary number that is a multiple of 4. NOTE: be sure
 # it returns false if the string is not a valid binary number!
 def binary_multiple_of_4?(s) 
-  remainder = -1
   
-  # psj :: ?? why must length be greater then 2 
-  # BP I tested for "0" and it was returning true. This was just a dirty fix to keep the re as is and avoid a return statement 
-  # vin: length is not necessary, but still need to return false if invalid binary like 'khy100'
-  # psj :: ?? a value of 1 can be interpretted at a binary 1 value and it's a single digit/character 
-  remainder = ( s.to_i(2) % 4 ) if s =~ /[0-1]+/ && (s.length >= 2) 
-  is_multiple = ( remainder == 0 ) ? true : false 
-  is_multiple
+  # tests for a string, tests that is is a binary, tests for multiple of 4,
+  # returns a boolean
+
+  test = s.is_a?(String) && s.match(/^[0-1]+$/ ) == s && s.to_i(2) % 4
+  
 end

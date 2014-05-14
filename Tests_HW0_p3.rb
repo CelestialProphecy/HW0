@@ -12,7 +12,7 @@ load 'HW0_p3.rb'
 # price of 33.8 should display as "$33.80".
 # enter tests below
 #TODO
-cases = [["123",234],["-4",0],["",-1], ["99908",889],["abcdf",88],]# [88,888],["lm","p"]]
+cases = [["123",234],["-4",0],["",-1], ["999 08",889],["abcdf",88],[88,888],["lm","p"]]
 def tryout(isbn, number)
 	begin
 		b = BookInStock.new(isbn,number)
