@@ -36,8 +36,8 @@ puts "\n"
 
 tests = {:sixteen => ["1000", true], :four => ["100",true], :two => ["10",false], :forty_8 => ["110000",true],
         :nonbinary => ["18",false], :negative_non => ["-9",false], :four_multiple_non => ["24",false],
-        :zero => ["0",false], :name => ["Ben",false], :empty => ["" ,false],:integer =>[9,false], :int2 => [4,false], 
-        :integer_binary => [1000,false], :mixed => ['a100',false],}
+        :zero => ["0",true], :name => ["Ben",false], :empty => ["" ,false],:integer =>[9,false], :int2 => [4,false], 
+        :integer_binary => [1000,false], :mixed => ['a100',false],:five40 => ["1010101010100",true]}
         
 
 

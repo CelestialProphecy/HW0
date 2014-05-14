@@ -45,6 +45,6 @@ def binary_multiple_of_4?(s)
   # returns a boolean
   
 
-  test = s.is_a?(String) && s.match(/^[0-1]+{2,}$/)!= nil && s.to_i(2) % 4 == 0
+  test = s.is_a?(String) && s.match(/^[0-1]+$/)!= nil && s.to_i(2) % 4 == 0
   
 end
