@@ -43,7 +43,8 @@ def binary_multiple_of_4?(s)
   
   # tests for a string, tests that is is a binary, tests for multiple of 4,
   # returns a boolean
+  
 
-  test = s.is_a?(String) && s.match(/^[0-1]+$/ ) == s && s.to_i(2) % 4
+  test = s.is_a?(String) && s.match(/^[0-1]+{2,}$/)!= nil && s.to_i(2) % 4 == 0
   
 end
